@@ -1,0 +1,2 @@
+# shishi_Flamingo
+这个是学习Open Flamingo的时候用的，本质上是把人家的示例代码抄重新抄一遍，按自己理解加了些注释啥的
