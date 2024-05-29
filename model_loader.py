@@ -11,8 +11,8 @@ class model_loader():
         model, image_processor, tokenizer = create_model_and_transforms(
             clip_vision_encoder_path="ViT-L-14",
             clip_vision_encoder_pretrained="openai",
-            lang_encoder_path="anas-awadalla/mpt-1b-redpajama-200b",
-            tokenizer_path="anas-awadalla/mpt-1b-redpajama-200b",
+            lang_encoder_path="/home/yfzx/Desktop/jushen/mpt-1b-redpajama-200b-dolly-main",
+            tokenizer_path="/home/yfzx/Desktop/jushen/mpt-1b-redpajama-200b-dolly-main",
             cross_attn_every_n_layers=1,
             cache_dir="PATH/TO/CACHE/DIR"  # Defaults to ~/.cache
         )
@@ -23,7 +23,9 @@ class model_loader():
     
 
     def load_pretrained_model(self):
-        checkpoint_path = hf_hub_download("openflamingo/OpenFlamingo-3B-vitl-mpt1b", "checkpoint.pt")
+        repo_id = "shishi"
+        # checkpoint_path = hf_hub_download(repo_id,"/home/yfzx/Desktop/jushen/open_flamingo/OpenFlamingo-3B-vitl-mpt1b/checkpoint.pt")
+        checkpoint_path = "/home/yfzx/Desktop/jushen/OpenFlamingo-3B-vitl-mpt1b-langinstruct/checkpoint.pt"
         self.model.load_state_dict(torch.load(checkpoint_path), strict=False)
 
     def demo1(self):
